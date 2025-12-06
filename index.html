@@ -917,7 +917,9 @@
             // Update biological state - Sapolsky model
             updateBiology(dt = 1) {
                 // Calculate stress inputs
-                const socialBuffer = this.biobondSupport;
+                // BioBond support is more effective in metabolic institutions (systemic vs individual)
+                const supportMultiplier = this.institutionType === 'metabolic' ? 1.2 : 1.0;
+                const socialBuffer = this.biobondSupport * supportMultiplier;
                 const institutionalStress = this.MFP * 0.5;
                 
                 // Update Glucocorticoid Load
@@ -964,13 +966,37 @@
                 const EVC = expectedPayoff - (biologicalCost * culturalCost);
                 this.lastEVC = EVC;
                 
-                // Mode switching
+                // BASE MFP CALCULATION - Key theoretical insight!
+                // =====================================================
+                // METABOLIC institutions prevent moral conflict through institutional design:
+                //   - Schwartz Rounds create space for moral processing
+                //   - Peer support normalizes ethical concerns
+                //   - Structural protections prevent being forced to violate values
+                // Result: Reduced MFP generation (prevention > repair)
+                //
+                // EXTRACTIVE institutions create moral conflict:
+                //   - Metrics that punish ethical behavior
+                //   - Pressure to cut corners for profit
+                //   - Retaliation against whistleblowers
+                // Result: Full MFP from scenario parameters
+                // =====================================================
+                let baseMFP = this.institutionalMFP;
+                
+                if (this.institutionType === 'metabolic') {
+                    // Institutional support prevents MFP generation (not just repairs it)
+                    // High institutional support → low moral conflict
+                    baseMFP = baseMFP * (1.0 - this.institutionalSupport * 0.85);
+                    // E.g., with institutionalSupport=0.5: MFP reduced by 42.5%
+                    // With institutionalSupport=0.5 and baseMFP=0.6: actual MFP = 0.345
+                }
+                
+                // Mode switching affects MFP
                 if (EVC < 0) {
                     this.mode = 'AUTOMATIC';
-                    this.MFP = this.institutionalMFP * 1.5;  // Higher penalty in automatic mode
+                    this.MFP = baseMFP * 1.5;  // Higher penalty in automatic mode
                 } else {
                     this.mode = 'MANUAL';
-                    this.MFP = this.institutionalMFP;
+                    this.MFP = baseMFP;
                 }
                 
                 return this.mode;
@@ -982,9 +1008,10 @@
                 const compounding = this.moralDebt * 0.05 * dt;  // "Interest" from rumination
                 
                 // Repair from constructor loops
-                const biobondRepair = this.biobondSupport * 0.15 * dt;
-                const civicRepair = this.civicSupport * 0.25 * dt;
-                const institutionalRepair = this.institutionalSupport * 0.3 * dt;
+                // Increased effectiveness to allow metabolic institutions to achieve net recovery
+                const biobondRepair = this.biobondSupport * 0.25 * dt;  // Increased from 0.15
+                const civicRepair = this.civicSupport * 0.35 * dt;       // Increased from 0.25
+                const institutionalRepair = this.institutionalSupport * 0.40 * dt;  // Increased from 0.30
                 const totalRepair = biobondRepair + civicRepair + institutionalRepair;
                 
                 this.moralDebt += newDebt + compounding - totalRepair;
