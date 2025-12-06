@@ -1,53 +1,1579 @@
-<HTML>
-<HEAD>
-<TITLE>Agent Intro Test.sbq6</TITLE>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<META content="Storyboard created with StoryBoard Quick 6 by PowerProduction Software, www.powerproduction.com" name="description">
-	<!-- Call for information or to place an order, 800.457.0383 or 408.559.0800 -->
-<style type="text/css">
-<!--
-BODY {
-background-image: url(bg2.gif);
-background-repeat: no-repeat;
-}
-.style1 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-.style2 {color: #FFFFFF}
--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced BCCM Simulator | Ethics Beyond Boundaries</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Clinical color system */
+            --bg-primary: #0a0e14;
+            --bg-secondary: #131920;
+            --bg-tertiary: #1c2128;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            
+            /* Semantic colors */
+            --danger-severe: #ff4444;
+            --danger-high: #ff6b35;
+            --warning-moderate: #f7b731;
+            --caution-sustainable: #5bc0de;
+            --success-flourishing: #2ecc71;
+            
+            /* Biological state colors */
+            --bio-stress: #e74c3c;
+            --bio-control: #3498db;
+            --bio-amygdala: #e67e22;
+            
+            /* Cultural colors */
+            --cultural-survival: #9b59b6;
+            --cultural-traditional: #1abc9c;
+            
+            /* Constructor loop colors */
+            --biobond: #16a085;
+            --civic: #2980b9;
+            --institutional: #8e44ad;
+            
+            --accent-clinical: #00d4ff;
+            --border-subtle: #30363d;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #0d1117 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Header - Medical Warning Aesthetic */
+        .header {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border: 2px solid var(--danger-severe);
+            border-left: 8px solid var(--danger-severe);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(255, 68, 68, 0.15);
+            animation: pulse-border 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-border {
+            0%, 100% { border-color: var(--danger-severe); }
+            50% { border-color: var(--danger-high); }
+        }
+        
+        h1 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+        
+        .warning-badge {
+            display: inline-block;
+            background: var(--danger-severe);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .warning-text {
+            background: rgba(255, 68, 68, 0.1);
+            border-left: 4px solid var(--danger-severe);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .warning-text strong {
+            color: var(--danger-severe);
+        }
+        
+        /* Control Panel */
+        .control-panel {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-clinical);
+            font-weight: 600;
+        }
+        
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        select, input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--accent-clinical);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-option {
+            flex: 1;
+            position: relative;
+        }
+        
+        .radio-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .radio-label {
+            display: block;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-subtle);
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        
+        .radio-option input[type="radio"]:checked + .radio-label {
+            border-color: var(--accent-clinical);
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        .radio-label .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Buttons */
+        button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'IBM Plex Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-clinical), #0099cc);
+            color: white;
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 212, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin: 2rem 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-clinical), var(--success-flourishing));
+            width: 0%;
+            transition: width 0.3s;
+            border-radius: 4px;
+        }
+        
+        .progress-text {
+            text-align: center;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Status Display */
+        .status-display {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: none;
+        }
+        
+        .status-display.active {
+            display: block;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .status-card {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-clinical);
+        }
+        
+        .status-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+        
+        .status-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .status-description {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* FHRI Gauge */
+        .fhri-gauge {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .fhri-value {
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: 'Crimson Pro', serif;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, var(--accent-clinical), var(--success-flourishing));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .fhri-status {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .fhri-scale {
+            display: flex;
+            margin-top: 1.5rem;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .fhri-zone {
+            flex: 1;
+            position: relative;
+        }
+        
+        .fhri-zone.severe { background: var(--danger-severe); }
+        .fhri-zone.high-risk { background: var(--danger-high); }
+        .fhri-zone.at-risk { background: var(--warning-moderate); }
+        .fhri-zone.sustainable { background: var(--caution-sustainable); }
+        .fhri-zone.flourishing { background: var(--success-flourishing); }
+        
+        .fhri-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        /* Charts */
+        .chart-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .chart-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .chart-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Scenario Info */
+        .scenario-info {
+            background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .scenario-info h3 {
+            color: var(--accent-clinical);
+            margin-bottom: 1rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .info-item {
+            padding: 0.75rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-clinical);
+        }
+        
+        .info-item strong {
+            color: var(--accent-clinical);
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .fhri-value {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            color: var(--accent-clinical);
+            text-decoration: underline dotted;
+        }
+        
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            z-index: 1000;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
     </style>
-</HEAD>
-<BODY bgcolor="black" text="white" alink=gray vlink=gray link=gray>
-<CENTER><font color="gray">Storyboard created with <a href = "http://www.powerproduction.com/">StoryBoard Quick 6</a> by PowerProduction Software</CENTER>
-	<!-- hi mom -->
-	<hr width="50%">
-		<!-- Navigation Bar (First,Previous,Next,Last) -->
-		<CENTER><font color=gray>First</font> | <font color=gray>Previous</font> | <a href=Page-002.html>Next</a> | <a href=Page-013.html>Last</a></CENTER>
-	<hr width="50%">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="warning-badge">🔬 Research Framework - Work in Progress</div>
+            <h1>🧠 Bio-Cultural Coherence Model (BCCM) Simulator</h1>
+            <div class="subtitle">Integrative Research Tool for Understanding Institutional Impact on Human Flourishing</div>
+            <p style="margin-top: 1rem; line-height: 1.8;">
+                <strong>Ethics Beyond Boundaries | St. Petersburg College</strong>
+            </p>
+            <div class="warning-text">
+                <strong>RESEARCH FRAMEWORK NOTICE:</strong> This simulator implements the Bio-Cultural Coherence Model (BCCM), 
+                an integrative research framework synthesizing established findings from multiple disciplines: Sapolsky's 
+                stress physiology (double-blind empirical research on glucocorticoid effects), Greene's moral psychology 
+                (fMRI studies of moral reasoning), and World Values Survey data (cross-cultural empirical surveys). 
+                <strong>This is NOT a clinically validated diagnostic instrument.</strong> No direct double-blind experiments 
+                on the integrated BCCM framework have been completed, though validation studies are planned. This is a 
+                <em>visualization and educational tool</em> that breaks down disciplinary silos to show how cumulative 
+                knowledge from biology, psychology, and sociology can work together. The power comes from integration—
+                showing mechanisms that individual disciplines study separately. The 
+                <span class="tooltip" data-tooltip="Functional Health Resilience Index: 0-100 research-based scale integrating biological, cultural, and moral dimensions">FHRI</span> 
+                scores represent theoretical predictions based on integrated research, not clinical diagnoses. What you see 
+                here represents our best current synthesis of peer-reviewed research into how institutional design affects 
+                human capacity for moral reasoning and long-term wellbeing. This framework will evolve as we refine 
+                parameters and conduct validation research.
+            </div>
+        </div>
 
-<!-- Start Frame -->
-<center>
-	<table width=600>
-		<tr>
-			<td align=left>Frame#1</td>
-		</tr>
-		<tr>
-			<td align=center><font color=black><img border=1 src="Frame-0001.jpg"></font></td>
-		</tr>
-		<tr>
-			<td align=left>This is our representation of an agent.&nbsp;&nbsp;An agent has agency and is effected by other agents and also effects other agents. You are an agent and everyone you have ever met is an agent and everyone thorughout history and everyone alive today is an agent.<br><td>
-		</tr>
-	</table>
-</center>
-<!-- End Frame -->
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h2 class="section-title">Simulation Configuration</h2>
+            
+            <div class="control-group">
+                <label for="scenario">Ethical Crisis Scenario</label>
+                <select id="scenario">
+                    <option value="healthcare">Healthcare Moral Injury - Sarah's Story (COVID)</option>
+                    <option value="whistleblower">Whistleblower Retaliation - Mark's Story (Challenger)</option>
+                    <option value="corruption">Corruption Cascade - Jennifer's Story (Enron)</option>
+                    <option value="harassment">Harassment Cover-Up - Maya's Story (#MeToo)</option>
+                    <option value="academic">Academic Dishonesty - Alex's Story (Cheating Ring)</option>
+                    <option value="environmental">Environmental Crime - David's Story (Dumping)</option>
+                </select>
+            </div>
 
-	<hr width="50%">
-		<!-- Navigation Bar (First,Previous,Next,Last) -->
-		<CENTER><font color=gray>First</font> | <font color=gray>Previous</font> | <a href=Page-002.html>Next</a> | <a href=Page-013.html>Last</a></CENTER>
+            <div class="control-group">
+                <label>Simulation Mode</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="single" name="mode" value="single" checked>
+                        <label for="single" class="radio-label">
+                            <div class="icon">👤</div>
+                            <div>Single Institution</div>
+                        </label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="compare" name="mode" value="compare">
+                        <label for="compare" class="radio-label">
+                            <div class="icon">⚖️</div>
+                            <div>Compare Both (RECOMMENDED)</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-	<hr width="50%">
-	<center><font color="440088"><body face="Arial, Helvetica, sans-serif" class="style1"><body alink="440088" vlink="440088" link="440088"><a href="http://www.powerproduction.com/">StoryBoard Quick 6</a> </font><font face="Arial, Helvetica, sans-serif" class="style1"><span class="style2"> is Copyright &copy; 1993 - 2017</span></font><font color="440088" face="Arial, Helvetica, sans-serif" class="style1"> <a href="http://www.powerproduction.com/">PowerProduction Software</a></font></center>
-</BODY>
-</HTML>
+            <div class="control-group">
+                <label>Institution Type</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="metabolic" name="institution" value="metabolic" checked>
+                        <label for="metabolic" class="radio-label">
+                            <div class="icon">🌱</div>
+                            <div>Metabolic (Protects)</div>
+                        </label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="extractive" name="institution" value="extractive">
+                        <label for="extractive" class="radio-label">
+                            <div class="icon">⚡</div>
+                            <div>Extractive (Destroys)</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="control-group">
+                    <label for="population">Population Size</label>
+                    <input type="number" id="population" min="10" max="500" value="100" step="10">
+                </div>
+                <div class="control-group">
+                    <label for="timesteps">Simulation Length (Quarters)</label>
+                    <input type="number" id="timesteps" min="20" max="200" value="50" step="10">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-primary" onclick="runSimulation()">🚀 Run Simulation - See What Happens</button>
+                <button class="btn-secondary" onclick="downloadData()">📥 Download Data</button>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Initializing simulation...</div>
+        </div>
+
+        <!-- Research Status & Methodology -->
+        <div class="control-panel" style="margin-bottom: 2rem;">
+            <h2 class="section-title">📊 Research Status & Methodology</h2>
+            <div style="line-height: 1.8; color: var(--text-secondary);">
+                <h3 style="color: var(--accent-clinical); font-size: 1.1rem; margin-bottom: 1rem;">What This Tool Is:</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Integrative Research Framework:</strong> Synthesizes established findings from neuroscience (Sapolsky), 
+                    moral psychology (Greene), sociology (Inglehart/WVS), and organizational theory into a unified agent-based model.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Educational Visualization Tool:</strong> Helps students understand complex interactions between 
+                    institutional design, biological stress responses, cultural values, and moral reasoning capacity.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Theory Development Platform:</strong> Allows exploration of theoretical predictions 
+                    that emerge when we integrate findings across traditionally siloed disciplines.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Work in Progress:</strong> Parameters are calibrated from published research where available, 
+                    but the integrated model itself is under continuous refinement and development.</li>
+                </ul>
+                
+                <h3 style="color: var(--danger-high); font-size: 1.1rem; margin-bottom: 1rem;">What This Tool Is NOT:</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Not a Clinical Diagnostic:</strong> This is not validated for individual diagnosis, treatment planning, 
+                    or clinical decision-making. Do not use FHRI scores as medical/psychological assessments.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Not Experimentally Validated (Yet):</strong> While individual components draw on peer-reviewed research, 
+                    the integrated BCCM framework has not undergone direct double-blind experimental validation. Validation studies are planned.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Not Predictive for Individuals:</strong> Population-level patterns may not apply to specific persons. 
+                    Individual variation is enormous and context-dependent.</li>
+                </ul>
+                
+                <h3 style="color: var(--accent-clinical); font-size: 1.1rem; margin-bottom: 1rem;">Empirical Foundations:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--bio-stress);">
+                        <strong style="color: var(--bio-stress);">Biological Components (Sapolsky)</strong><br>
+                        Based on decades of glucocorticoid research, HPA axis studies, and PFC/amygdala neuroimaging. 
+                        Stress → cortisol → PFC atrophy pathway is well-established in literature.
+                    </div>
+                    <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--bio-control);">
+                        <strong style="color: var(--bio-control);">Moral Psychology (Greene)</strong><br>
+                        Dual-process theory of moral judgment supported by fMRI studies showing DLPFC activation in deliberative 
+                        reasoning vs. amygdala in automatic/emotional responses.
+                    </div>
+                    <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--cultural-survival);">
+                        <strong style="color: var(--cultural-survival);">Cultural Values (Inglehart/WVS)</strong><br>
+                        World Values Survey data (100+ countries, 400,000+ respondents) documenting survival vs. self-expression 
+                        value shifts in response to existential security changes.
+                    </div>
+                    <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--institutional);">
+                        <strong style="color: var(--institutional);">Moral Injury Research</strong><br>
+                        Clinical literature on moral injury in healthcare (Litz et al.), military (Shay), and organizational contexts. 
+                        Documented long-term psychological impacts of values violations.
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--accent-clinical); border-radius: 4px;">
+                    <strong style="color: var(--accent-clinical);">The Integration Is The Innovation:</strong> Individual disciplines have studied 
+                    stress physiology, moral reasoning, cultural values, and institutional effects separately. This model attempts to show how 
+                    they interact as a dynamic system. The hypotheses generated here—like how institutional design affects population-level 
+                    capacity for democratic deliberation via biological pathways—can guide future empirical research.
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario Info -->
+        <div class="scenario-info" id="scenarioInfo" style="display: none;">
+            <h3>📖 Current Scenario Details</h3>
+            <div id="scenarioDetails"></div>
+        </div>
+
+        <!-- FHRI Gauge -->
+        <div class="fhri-gauge" id="fhriGauge" style="display: none;">
+            <h2 class="section-title">Population FHRI Status (Research-Based Composite Measure)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">
+                The Functional Health Resilience Index integrates biological capacity, phenomenological coherence, 
+                moral debt load, and environmental fit into a theoretical 0-100 scale. These are model predictions, 
+                not clinical measurements.
+            </p>
+            <div class="fhri-value" id="fhriValue">--</div>
+            <div class="fhri-status" id="fhriStatus">Initializing...</div>
+            <div class="fhri-scale">
+                <div class="fhri-zone severe"></div>
+                <div class="fhri-zone high-risk"></div>
+                <div class="fhri-zone at-risk"></div>
+                <div class="fhri-zone sustainable"></div>
+                <div class="fhri-zone flourishing"></div>
+            </div>
+            <div class="fhri-labels">
+                <span>0 (Severe)</span>
+                <span>40 (High Risk)</span>
+                <span>60 (At Risk)</span>
+                <span>75 (Sustainable)</span>
+                <span>100 (Flourishing)</span>
+            </div>
+        </div>
+
+        <!-- Status Display -->
+        <div class="status-display" id="statusDisplay">
+            <h2 class="section-title">📡 Real-Time Biological & Cultural State</h2>
+            <div class="status-grid" id="statusGrid"></div>
+        </div>
+
+        <!-- Charts -->
+        <div class="chart-container">
+            <h3 class="chart-title">FHRI (Functional Health Resilience Index) Over Time</h3>
+            <div class="chart-description">
+                The FHRI is a research-based composite measure (0-100 scale) integrating biological capacity, 
+                phenomenological coherence, moral debt, and environmental fit. Based on theoretical synthesis of 
+                established research findings, not clinical validation. Thresholds below 50 suggest theoretical 
+                conditions where integrated functioning becomes unsustainable. Watch how different institutional 
+                designs produce divergent trajectories.
+            </div>
+            <div id="fhriChart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3 class="chart-title">Biological State Dynamics (Based on Sapolsky's Research)</h3>
+            <div class="chart-description">
+                <strong style="color: var(--bio-stress)">Glucocorticoid Load (L_GC)</strong>: Modeled chronic stress accumulation based on HPA axis research | 
+                <strong style="color: var(--bio-control)">PFC Control Capacity (C_PFC)</strong>: Theoretical capacity for deliberative reasoning based on stress-PFC atrophy relationship | 
+                <strong style="color: var(--bio-amygdala)">Amygdala Sensitivity (S_Amyg)</strong>: Modeled threat reactivity based on stress sensitization research.
+                These represent theoretical dynamics extrapolated from empirical neuroscience, not direct measurements.
+            </div>
+            <div id="biologicalChart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3 class="chart-title">Moral Debt Accumulation (Theoretical Construct)</h3>
+            <div class="chart-description">
+                Moral debt is a theoretical construct representing accumulated psychological burden from values violations. 
+                Like financial debt, the model includes compounding effects (rumination, unprocessed trauma). The framework 
+                predicts that institutional pressure to violate values creates psychological costs that cannot be "discharged" 
+                externally—they must be metabolized through BioBond (somatic processing), Civic (narrative reconstruction), 
+                or Institutional (structural change) interventions. The "bankruptcy threshold" at 10 represents a theoretical 
+                point where repair capacity is overwhelmed. This draws on moral injury literature but represents our theoretical 
+                integration, not validated measurement.
+            </div>
+            <div id="moralDebtChart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3 class="chart-title">Cultural Value Evolution (Based on World Values Survey Patterns)</h3>
+            <div class="chart-description">
+                <strong style="color: var(--cultural-survival)">Survival ← → Self-Expression values</strong>: Inglehart's WVS research 
+                documents population-level value shifts in response to existential security changes. Our model incorporates 
+                <em>hysteresis</em>—the empirically observed pattern where values regress toward survival mode faster than they recover. 
+                We model regression at rate α=0.15 and recovery at β=0.02 (5-10x slower), based on WVS longitudinal data patterns. 
+                This theoretical parameterization predicts that stress-induced value changes persist long after environmental 
+                conditions improve—a testable hypothesis about cultural resilience.
+            </div>
+            <div id="culturalChart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3 class="chart-title">Decision Mode Distribution (Dual-Process Model)</h3>
+            <div class="chart-description">
+                Based on Greene's dual-process theory of moral judgment: when Expected Value of Control (EVC) becomes negative 
+                (biological/cultural costs exceed expected benefits), agents theoretically shift from MANUAL (deliberative, 
+                PFC-mediated) to AUTOMATIC (emotional, amygdala-driven) reasoning. This represents when stress-induced PFC 
+                impairment makes nuanced moral reasoning biologically costly. The model predicts this is when tribal/emotional 
+                responses dominate—a theoretical mechanism linking individual neuroscience to population-level polarization. 
+                Empirical validation of this threshold needed.
+            </div>
+            <div id="decisionModeChart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3 class="chart-title">Population Lambda Coefficient (Theoretical Capacity for Deep Pragmatism)</h3>
+            <div class="chart-description">
+                Lambda represents the theoretical population-level capacity for complex moral reasoning, derived from mean 
+                PFC control capacity. This is a hypothesis about collective cognitive function: when mean C_PFC < 0.4, 
+                lambda approaches 0, suggesting the population may lose biological prerequisites for nuanced deliberation. 
+                This prediction emerges from integrating neuroscience (individual PFC function) with political theory 
+                (requirements for democratic reasoning). Empirical validation needed.
+            </div>
+            <div id="lambdaChart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3 class="chart-title">Constructor Loop Interventions</h3>
+            <div class="chart-description">
+                <strong style="color: var(--biobond)">BioBond</strong>: Somatic repair (Schwartz Rounds, peer support, ritual) | 
+                <strong style="color: var(--civic)">Civic</strong>: Narrative reconstruction, collective meaning-making | 
+                <strong style="color: var(--institutional)">Institutional</strong>: Structural change preventing future damage
+            </div>
+            <div id="constructorChart"></div>
+        </div>
+
+        <!-- Research Attribution & Feedback -->
+        <div class="control-panel" style="margin-top: 3rem;">
+            <h2 class="section-title">📚 Research Attribution & Development</h2>
+            <div style="line-height: 1.8; color: var(--text-secondary);">
+                <p style="margin-bottom: 1rem;">
+                    <strong>Principal Investigator:</strong> Robert Mertzman, Ethics Institute, St. Petersburg College<br>
+                    <strong>Project:</strong> Ethics Beyond Boundaries - Integrative Framework for Moral Coordination Across Difference<br>
+                    <strong>Status:</strong> Active Research & Development (2024-2025)
+                </p>
+                
+                <h3 style="color: var(--accent-clinical); font-size: 1.1rem; margin: 1.5rem 0 1rem 0;">Primary Research Foundations:</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li><strong>Neurobiology:</strong> Sapolsky, R. (2004). <em>Why Zebras Don't Get Ulcers</em>. Chronic stress effects on PFC and amygdala.</li>
+                    <li><strong>Moral Psychology:</strong> Greene, J. (2013). <em>Moral Tribes</em>. Dual-process theory of moral judgment.</li>
+                    <li><strong>Cultural Values:</strong> Inglehart, R. & Welzel, C. (2005). <em>Modernization, Cultural Change, and Democracy</em>. World Values Survey.</li>
+                    <li><strong>Moral Injury:</strong> Litz, B. et al. (2009). Clinical Psychology Review; Shay, J. (2014). <em>Moral Injury</em>.</li>
+                    <li><strong>Constructor Theory:</strong> Deutsch, D. (2013). Synthese. Counterfactual-preserving transformations.</li>
+                </ul>
+
+                <h3 style="color: var(--accent-clinical); font-size: 1.1rem; margin: 1.5rem 0 1rem 0;">Ongoing Development:</h3>
+                <p style="margin-bottom: 1rem;">
+                    This framework is under active development. We welcome feedback, critique, and collaboration opportunities. 
+                    Parameters will be refined as we gather empirical data. Planned validation studies include:
+                </p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li>Longitudinal tracking of FHRI components in healthcare workers</li>
+                    <li>Controlled intervention studies testing Constructor Loop effectiveness</li>
+                    <li>Cross-cultural validation of cultural value dynamics</li>
+                    <li>Biological marker correlation (cortisol, fMRI) with model predictions</li>
+                </ul>
+
+                <div style="padding: 1rem; background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--accent-clinical); border-radius: 4px; margin-top: 1.5rem;">
+                    <strong style="color: var(--accent-clinical);">How to Cite This Work:</strong><br>
+                    Mertzman, R. (2025). <em>Bio-Cultural Coherence Model (BCCM): An Integrative Framework for Understanding 
+                    Institutional Impact on Human Flourishing</em>. Ethics Beyond Boundaries Project, St. Petersburg College. 
+                    [Research in Progress]
+                </div>
+
+                <p style="margin-top: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                    For feedback, collaboration inquiries, or to report issues with this simulation:<br>
+                    Ethics Institute, St. Petersburg College | Ethics Beyond Boundaries Project<br>
+                    <em>This tool is provided for educational and research purposes. Use with appropriate scholarly caution.</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===================================================================
+        // BCCM Agent Class - Research Framework Implementation
+        // ===================================================================
+        // 
+        // Bio-Cultural Coherence Model (BCCM)
+        // Integrative research framework synthesizing:
+        //   - Sapolsky's stress physiology (glucocorticoid effects on PFC)
+        //   - Greene's dual-process moral psychology (System 1 vs System 2)
+        //   - Inglehart's World Values Survey (cultural value dynamics)
+        //   - Moral injury literature (Litz, Shay)
+        //
+        // STATUS: Work in progress. Individual components based on peer-reviewed
+        // research. Integrated model represents theoretical synthesis requiring
+        // empirical validation. Parameters calibrated from published data where
+        // available; integration parameters are theoretical predictions.
+        //
+        // This is an EDUCATIONAL AND RESEARCH TOOL, not a clinical instrument.
+        // ===================================================================
+        
+        class BCCMAgent {
+            constructor(params, institutionType) {
+                // Biological state (Sapolsky)
+                this.L_GC = 0.4;  // Glucocorticoid load (baseline stress)
+                this.C_PFC = 0.8;  // Prefrontal cortex control capacity
+                this.S_Amyg = 0.3;  // Amygdala sensitivity
+                this.C_max = params.C_max || 0.9;
+                this.k = params.k || 15;  // Atrophy steepness
+                this.theta_crit = params.theta_crit || 0.6;  // Critical threshold
+                
+                // Cultural values (WVS)
+                this.V_Surv = 0.5;  // Survival vs Self-Expression (0-1)
+                this.V_Trad = 0.5;  // Traditional vs Secular-Rational
+                
+                // Moral state
+                this.moralDebt = 0;
+                this.MFP = 0;  // Morphic Fidelity Penalty
+                this.FHRI = 70;
+                
+                // Decision mode
+                this.mode = 'MANUAL';  // vs 'AUTOMATIC'
+                this.lastEVC = 0;
+                
+                // Constructor loop tracking
+                this.biobondSupport = institutionType === 'metabolic' ? 0.4 : 0.1;
+                this.civicSupport = institutionType === 'metabolic' ? 0.3 : 0.05;
+                this.institutionalSupport = institutionType === 'metabolic' ? 0.5 : 0.0;
+                
+                // Institution parameters
+                this.institutionType = institutionType;
+                this.environmentalStress = params.environmentalStress || 0.3;
+                this.institutionalMFP = params.institutionalMFP || 0.3;
+                
+                // History
+                this.history = {
+                    L_GC: [this.L_GC],
+                    C_PFC: [this.C_PFC],
+                    S_Amyg: [this.S_Amyg],
+                    V_Surv: [this.V_Surv],
+                    moralDebt: [this.moralDebt],
+                    FHRI: [this.FHRI],
+                    mode: [this.mode]
+                };
+            }
+            
+            // Update biological state - Sapolsky model
+            updateBiology(dt = 1) {
+                // Calculate stress inputs
+                const socialBuffer = this.biobondSupport;
+                const institutionalStress = this.MFP * 0.5;
+                
+                // Update Glucocorticoid Load
+                const deltaStress = (
+                    this.environmentalStress * 0.8 +
+                    institutionalStress -
+                    socialBuffer
+                ) * dt;
+                
+                this.L_GC += deltaStress;
+                this.L_GC = Math.max(0, Math.min(1, this.L_GC));
+                
+                // Update PFC Control Capacity - sigmoidal decay
+                this.C_PFC = this.C_max / (1.0 + Math.exp(this.k * (this.L_GC - this.theta_crit)));
+                
+                // Update Amygdala Sensitivity
+                this.S_Amyg = 0.3 + 0.7 * this.L_GC;
+            }
+            
+            // Update cultural values - WVS model with hysteresis
+            updateCulturalValues(dt = 1) {
+                const alpha = 0.15;  // Fast regression
+                const beta = 0.02;   // Slow recovery (hysteresis!)
+                const baseline_stress = 0.4;
+                const target_VSurv = 0.7;  // Self-expression target
+                
+                // When stressed, regress toward survival values fast
+                // When safe, recover slowly
+                const stressEffect = -alpha * (this.L_GC - baseline_stress);
+                const recoveryEffect = beta * (target_VSurv - this.V_Surv);
+                
+                this.V_Surv += dt * (stressEffect + recoveryEffect);
+                this.V_Surv = Math.max(0, Math.min(1, this.V_Surv));
+            }
+            
+            // Make moral decision - Greene model with EVC
+            makeDecision() {
+                // Simulate moral dilemma
+                const expectedPayoff = 0.7;  // Base success probability
+                const biologicalCost = 0.5 / Math.max(this.C_PFC, 0.01);
+                const culturalCost = 1.0 + (1.0 - this.V_Surv);  // Higher when in survival mode
+                
+                // Expected Value of Control
+                const EVC = expectedPayoff - (biologicalCost * culturalCost);
+                this.lastEVC = EVC;
+                
+                // Mode switching
+                if (EVC < 0) {
+                    this.mode = 'AUTOMATIC';
+                    this.MFP = this.institutionalMFP * 1.5;  // Higher penalty in automatic mode
+                } else {
+                    this.mode = 'MANUAL';
+                    this.MFP = this.institutionalMFP;
+                }
+                
+                return this.mode;
+            }
+            
+            // Update moral debt with compounding
+            updateMoralDebt(dt = 1) {
+                const newDebt = this.MFP * dt;
+                const compounding = this.moralDebt * 0.05 * dt;  // "Interest" from rumination
+                
+                // Repair from constructor loops
+                const biobondRepair = this.biobondSupport * 0.15 * dt;
+                const civicRepair = this.civicSupport * 0.25 * dt;
+                const institutionalRepair = this.institutionalSupport * 0.3 * dt;
+                const totalRepair = biobondRepair + civicRepair + institutionalRepair;
+                
+                this.moralDebt += newDebt + compounding - totalRepair;
+                this.moralDebt = Math.max(0, this.moralDebt);
+                
+                // Bankruptcy threshold
+                if (this.moralDebt > 10) {
+                    this.moralDebt = 10;  // Cap at bankruptcy
+                    this.L_GC = Math.min(1, this.L_GC + 0.1);  // Additional stress
+                }
+            }
+            
+            // Calculate FHRI
+            calculateFHRI() {
+                // Four subscales
+                const phenCoherence = (1 - this.moralDebt / 10) * 25;  // Phenomenological coherence
+                const bioCapacity = (this.C_PFC > 0.6 ? 1 : this.C_PFC / 0.6) * 30;  // Biological capacity
+                const moralDebtLoad = Math.max(0, 25 - this.moralDebt * 2.5);  // Moral debt (inverted)
+                const envFit = (this.institutionType === 'metabolic' ? 1 : 0.3) * 20;  // Environmental fit
+                
+                this.FHRI = phenCoherence + bioCapacity + moralDebtLoad + envFit;
+                return this.FHRI;
+            }
+            
+            getFHRIStatus() {
+                if (this.FHRI < 40) return { status: "SEVERE - Imminent Breakdown", color: "var(--danger-severe)" };
+                if (this.FHRI < 50) return { status: "HIGH RISK - Urgent BioBond Needed", color: "var(--danger-high)" };
+                if (this.FHRI < 60) return { status: "AT RISK - Interventions Recommended", color: "var(--warning-moderate)" };
+                if (this.FHRI < 75) return { status: "SUSTAINABLE - Monitor Closely", color: "var(--caution-sustainable)" };
+                return { status: "FLOURISHING - All Loops Accessible", color: "var(--success-flourishing)" };
+            }
+            
+            // Full timestep update
+            step(dt = 1) {
+                this.updateBiology(dt);
+                this.updateCulturalValues(dt);
+                this.makeDecision();
+                this.updateMoralDebt(dt);
+                this.calculateFHRI();
+                
+                // Record history
+                this.history.L_GC.push(this.L_GC);
+                this.history.C_PFC.push(this.C_PFC);
+                this.history.S_Amyg.push(this.S_Amyg);
+                this.history.V_Surv.push(this.V_Surv);
+                this.history.moralDebt.push(this.moralDebt);
+                this.history.FHRI.push(this.FHRI);
+                this.history.mode.push(this.mode);
+            }
+        }
+        
+        // ===================================================================
+        // Scenario Configurations
+        // ===================================================================
+        
+        const scenarios = {
+            healthcare: {
+                name: "Healthcare Moral Injury - Sarah's Story",
+                character: "Sarah, ICU Nurse during COVID-19",
+                virtue: "Compassion",
+                connection: "Frontline healthcare workers forced to ration care",
+                environmentalStress: 0.7,
+                institutionalMFP: 0.6,
+                description: "Sarah faces impossible triage decisions daily, forced to deny care to patients she knows will die. The institution demands she work double shifts with inadequate PPE while administrators protect themselves."
+            },
+            whistleblower: {
+                name: "Whistleblower Retaliation - Mark's Story",
+                character: "Mark, Engineer (Challenger Disaster)",
+                virtue: "Courage",
+                connection: "Roger Boisjoly's testimony on institutional pressure",
+                environmentalStress: 0.4,
+                institutionalMFP: 0.9,
+                description: "Mark knows the O-rings will fail in cold temperatures. Management demands he sign off anyway. His choice: violate his engineering ethics or lose his career and endanger the crew."
+            },
+            corruption: {
+                name: "Corruption Cascade - Jennifer's Story",
+                character: "Jennifer, Accountant (Enron-style)",
+                virtue: "Justice",
+                connection: "Systematic accounting fraud destroying pensions",
+                environmentalStress: 0.5,
+                institutionalMFP: 0.7,
+                description: "Jennifer is ordered to use mark-to-market accounting to hide losses. Everyone around her is doing it. Refusing means unemployment while watching colleagues get rich through fraud."
+            },
+            harassment: {
+                name: "Harassment Cover-Up - Maya's Story",
+                character: "Maya, Program Coordinator",
+                virtue: "Justice",
+                connection: "#MeToo revelations of institutional complicity",
+                environmentalStress: 0.6,
+                institutionalMFP: 0.8,
+                description: "Maya witnesses harassment of junior colleagues by a powerful supervisor. HR tells her to stay quiet to 'protect the organization.' She must choose between her values and her job."
+            },
+            academic: {
+                name: "Academic Dishonesty - Alex's Story",
+                character: "Alex, College Student",
+                virtue: "Wisdom",
+                connection: "Systematic cheating rings in competitive programs",
+                environmentalStress: 0.5,
+                institutionalMFP: 0.5,
+                description: "Alex discovers 40% of the class is using Chegg and AI tools while professors look away. Refusing to cheat means lower grades and lost scholarships. The institution tacitly permits it."
+            },
+            environmental: {
+                name: "Environmental Crime - David's Story",
+                character: "David, Plant Supervisor",
+                virtue: "Justice",
+                connection: "Corporate dumping destroying communities",
+                environmentalStress: 0.5,
+                institutionalMFP: 0.8,
+                description: "David is ordered to dump toxic waste into the river at night. Management says 'everyone does it' and the fine is cheaper than proper disposal. His community drinks this water."
+            }
+        };
+        
+        // ===================================================================
+        // Simulation Management
+        // ===================================================================
+        
+        let simulationData = {
+            agents: [],
+            timesteps: 0,
+            currentStep: 0,
+            mode: 'single',
+            scenario: null
+        };
+        
+        function runSimulation() {
+            // Get parameters
+            const scenarioKey = document.getElementById('scenario').value;
+            const mode = document.querySelector('input[name="mode"]:checked').value;
+            const institutionType = document.querySelector('input[name="institution"]:checked').value;
+            const population = parseInt(document.getElementById('population').value);
+            const timesteps = parseInt(document.getElementById('timesteps').value);
+            
+            simulationData.scenario = scenarios[scenarioKey];
+            simulationData.mode = mode;
+            simulationData.timesteps = timesteps;
+            
+            // Show progress
+            document.getElementById('progressContainer').style.display = 'block';
+            document.getElementById('scenarioInfo').style.display = 'block';
+            document.getElementById('fhriGauge').style.display = 'block';
+            document.getElementById('statusDisplay').classList.add('active');
+            
+            // Display scenario info
+            displayScenarioInfo(simulationData.scenario);
+            
+            // Initialize agents
+            const scenarioParams = {
+                environmentalStress: simulationData.scenario.environmentalStress,
+                institutionalMFP: simulationData.scenario.institutionalMFP,
+                C_max: 0.9,
+                k: 15,
+                theta_crit: 0.6
+            };
+            
+            simulationData.agents = [];
+            
+            if (mode === 'single') {
+                for (let i = 0; i < population; i++) {
+                    simulationData.agents.push(new BCCMAgent(scenarioParams, institutionType));
+                }
+            } else {
+                // Compare mode: half metabolic, half extractive
+                for (let i = 0; i < population / 2; i++) {
+                    simulationData.agents.push(new BCCMAgent(scenarioParams, 'metabolic'));
+                }
+                for (let i = 0; i < population / 2; i++) {
+                    simulationData.agents.push(new BCCMAgent(scenarioParams, 'extractive'));
+                }
+            }
+            
+            // Run simulation with animation
+            simulationData.currentStep = 0;
+            runStep();
+        }
+        
+        function runStep() {
+            if (simulationData.currentStep >= simulationData.timesteps) {
+                finishSimulation();
+                return;
+            }
+            
+            // Update all agents
+            simulationData.agents.forEach(agent => agent.step(1));
+            simulationData.currentStep++;
+            
+            // Update UI
+            const progress = (simulationData.currentStep / simulationData.timesteps) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = 
+                `Timestep ${simulationData.currentStep} / ${simulationData.timesteps} - Tracking ${simulationData.agents.length} individuals...`;
+            
+            // Update live displays every 5 steps
+            if (simulationData.currentStep % 5 === 0 || simulationData.currentStep === simulationData.timesteps) {
+                updateLiveDisplays();
+            }
+            
+            // Continue animation
+            setTimeout(runStep, 20);  // Fast animation
+        }
+        
+        function finishSimulation() {
+            document.getElementById('progressText').textContent = 'Simulation complete - analyzing results...';
+            
+            // Generate all visualizations
+            setTimeout(() => {
+                generateAllCharts();
+                document.getElementById('progressContainer').style.display = 'none';
+            }, 500);
+        }
+        
+        // ===================================================================
+        // Display Functions
+        // ===================================================================
+        
+        function displayScenarioInfo(scenario) {
+            const html = `
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Character</strong>
+                        ${scenario.character}
+                    </div>
+                    <div class="info-item">
+                        <strong>Tests Virtue</strong>
+                        ${scenario.virtue}
+                    </div>
+                    <div class="info-item">
+                        <strong>Real-World Connection</strong>
+                        ${scenario.connection}
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; line-height: 1.8; color: var(--text-secondary);">
+                    ${scenario.description}
+                </p>
+            `;
+            document.getElementById('scenarioDetails').innerHTML = html;
+        }
+        
+        function updateLiveDisplays() {
+            // Calculate population averages
+            const meanFHRI = simulationData.agents.reduce((sum, a) => sum + a.FHRI, 0) / simulationData.agents.length;
+            const meanCPFC = simulationData.agents.reduce((sum, a) => sum + a.C_PFC, 0) / simulationData.agents.length;
+            const meanLGC = simulationData.agents.reduce((sum, a) => sum + a.L_GC, 0) / simulationData.agents.length;
+            const meanMoralDebt = simulationData.agents.reduce((sum, a) => sum + a.moralDebt, 0) / simulationData.agents.length;
+            const autoMode = simulationData.agents.filter(a => a.mode === 'AUTOMATIC').length / simulationData.agents.length;
+            
+            // Update FHRI gauge
+            document.getElementById('fhriValue').textContent = meanFHRI.toFixed(1);
+            const fhriStatusObj = getFHRIStatusForValue(meanFHRI);
+            const statusElem = document.getElementById('fhriStatus');
+            statusElem.textContent = fhriStatusObj.status;
+            statusElem.style.background = fhriStatusObj.color;
+            statusElem.style.color = 'white';
+            
+            // Update status cards
+            const statusHTML = `
+                <div class="status-card">
+                    <div class="status-label">Mean PFC Control</div>
+                    <div class="status-value">${(meanCPFC * 100).toFixed(1)}%</div>
+                    <div class="status-description">Capacity for deliberative reasoning</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-label">Glucocorticoid Load</div>
+                    <div class="status-value">${(meanLGC * 100).toFixed(1)}%</div>
+                    <div class="status-description">Chronic stress accumulation</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-label">Moral Debt</div>
+                    <div class="status-value">${meanMoralDebt.toFixed(2)}</div>
+                    <div class="status-description">Unprocessed moral injury (bankruptcy at 10)</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-label">Automatic Mode</div>
+                    <div class="status-value">${(autoMode * 100).toFixed(1)}%</div>
+                    <div class="status-description">% in tribal/emotional reasoning</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-label">Lambda Coefficient</div>
+                    <div class="status-value">${calculateLambda(meanCPFC).toFixed(2)}</div>
+                    <div class="status-description">Capacity for deep pragmatism (0-1)</div>
+                </div>
+            `;
+            document.getElementById('statusGrid').innerHTML = statusHTML;
+        }
+        
+        function getFHRIStatusForValue(fhri) {
+            if (fhri < 40) return { status: "SEVERE - Imminent Breakdown", color: "var(--danger-severe)" };
+            if (fhri < 50) return { status: "HIGH RISK - Urgent BioBond Needed", color: "var(--danger-high)" };
+            if (fhri < 60) return { status: "AT RISK - Interventions Recommended", color: "var(--warning-moderate)" };
+            if (fhri < 75) return { status: "SUSTAINABLE - Monitor Closely", color: "var(--caution-sustainable)" };
+            return { status: "FLOURISHING - All Loops Accessible", color: "var(--success-flourishing)" };
+        }
+        
+        function calculateLambda(meanCPFC) {
+            if (meanCPFC < 0.4) return 0;
+            if (meanCPFC > 0.8) return 1;
+            return 2.5 * (meanCPFC - 0.4);
+        }
+        
+        // ===================================================================
+        // Visualization Functions
+        // ===================================================================
+        
+        function generateAllCharts() {
+            const timesteps = simulationData.timesteps;
+            const timeArray = Array.from({length: timesteps + 1}, (_, i) => i);
+            
+            if (simulationData.mode === 'single') {
+                generateSingleModeCharts(timeArray);
+            } else {
+                generateCompareModeCharts(timeArray);
+            }
+        }
+        
+        function generateSingleModeCharts(timeArray) {
+            const agents = simulationData.agents;
+            
+            // Calculate population means over time
+            const meanFHRI = timeArray.map(t => 
+                agents.reduce((sum, a) => sum + a.history.FHRI[t], 0) / agents.length
+            );
+            const meanLGC = timeArray.map(t => 
+                agents.reduce((sum, a) => sum + a.history.L_GC[t], 0) / agents.length
+            );
+            const meanCPFC = timeArray.map(t => 
+                agents.reduce((sum, a) => sum + a.history.C_PFC[t], 0) / agents.length
+            );
+            const meanSAmyg = timeArray.map(t => 
+                agents.reduce((sum, a) => sum + a.history.S_Amyg[t], 0) / agents.length
+            );
+            const meanVSurv = timeArray.map(t => 
+                agents.reduce((sum, a) => sum + a.history.V_Surv[t], 0) / agents.length
+            );
+            const meanMoralDebt = timeArray.map(t => 
+                agents.reduce((sum, a) => sum + a.history.moralDebt[t], 0) / agents.length
+            );
+            const autoPercent = timeArray.map(t => 
+                agents.filter(a => a.history.mode[t] === 'AUTOMATIC').length / agents.length * 100
+            );
+            const lambda = timeArray.map(t => calculateLambda(meanCPFC[t]));
+            
+            // FHRI Chart
+            plotChart('fhriChart', [
+                {x: timeArray, y: meanFHRI, name: 'Population Mean FHRI', 
+                 line: {color: 'rgb(0, 212, 255)', width: 3}}
+            ], 'Quarter', 'FHRI Score (0-100)', 
+            [{y: 40, label: 'Severe', color: 'rgba(255, 68, 68, 0.3)'},
+             {y: 50, label: 'High Risk', color: 'rgba(255, 107, 53, 0.3)'},
+             {y: 60, label: 'At Risk', color: 'rgba(247, 183, 49, 0.3)'},
+             {y: 75, label: 'Sustainable', color: 'rgba(91, 192, 222, 0.3)'}]);
+            
+            // Biological Chart
+            plotChart('biologicalChart', [
+                {x: timeArray, y: meanLGC.map(v => v * 100), name: 'Glucocorticoid Load', 
+                 line: {color: 'rgb(231, 76, 60)', width: 2}},
+                {x: timeArray, y: meanCPFC.map(v => v * 100), name: 'PFC Control', 
+                 line: {color: 'rgb(52, 152, 219)', width: 2}},
+                {x: timeArray, y: meanSAmyg.map(v => v * 100), name: 'Amygdala Sensitivity', 
+                 line: {color: 'rgb(230, 126, 34)', width: 2}}
+            ], 'Quarter', 'Percentage (%)');
+            
+            // Moral Debt Chart
+            plotChart('moralDebtChart', [
+                {x: timeArray, y: meanMoralDebt, name: 'Mean Moral Debt', 
+                 fill: 'tozeroy', line: {color: 'rgb(255, 68, 68)', width: 2}}
+            ], 'Quarter', 'Moral Debt', 
+            [{y: 10, label: 'Bankruptcy Threshold', color: 'rgba(255, 0, 0, 0.5)'}]);
+            
+            // Cultural Chart
+            plotChart('culturalChart', [
+                {x: timeArray, y: meanVSurv.map(v => v * 100), name: 'Self-Expression ←→ Survival', 
+                 line: {color: 'rgb(155, 89, 182)', width: 2}}
+            ], 'Quarter', 'Value Score (0=Survival, 100=Self-Expression)');
+            
+            // Decision Mode Chart
+            plotChart('decisionModeChart', [
+                {x: timeArray, y: autoPercent, name: '% in Automatic Mode', 
+                 fill: 'tozeroy', line: {color: 'rgb(231, 76, 60)', width: 2}}
+            ], 'Quarter', 'Percentage (%)');
+            
+            // Lambda Chart
+            plotChart('lambdaChart', [
+                {x: timeArray, y: lambda, name: 'Lambda Coefficient', 
+                 line: {color: 'rgb(46, 204, 113)', width: 3}}
+            ], 'Quarter', 'Lambda (0-1)', 
+            [{y: 0.4, label: 'Critical Threshold', color: 'rgba(255, 0, 0, 0.3)'}]);
+            
+            // Constructor interventions (static for single mode)
+            const biobond = agents[0].biobondSupport;
+            const civic = agents[0].civicSupport;
+            const institutional = agents[0].institutionalSupport;
+            
+            plotBarChart('constructorChart', 
+                ['BioBond Support', 'Civic Support', 'Institutional Support'],
+                [biobond, civic, institutional],
+                ['rgb(22, 160, 133)', 'rgb(41, 128, 185)', 'rgb(142, 68, 173)']);
+        }
+        
+        function generateCompareModeCharts(timeArray) {
+            const metabolicAgents = simulationData.agents.filter(a => a.institutionType === 'metabolic');
+            const extractiveAgents = simulationData.agents.filter(a => a.institutionType === 'extractive');
+            
+            // Calculate means for both groups
+            const calcMean = (agents, field) => timeArray.map(t => 
+                agents.reduce((sum, a) => sum + a.history[field][t], 0) / agents.length
+            );
+            
+            const metabolicFHRI = calcMean(metabolicAgents, 'FHRI');
+            const extractiveFHRI = calcMean(extractiveAgents, 'FHRI');
+            
+            const metabolicLGC = calcMean(metabolicAgents, 'L_GC');
+            const extractiveLGC = calcMean(extractiveAgents, 'L_GC');
+            
+            const metabolicCPFC = calcMean(metabolicAgents, 'C_PFC');
+            const extractiveCPFC = calcMean(extractiveAgents, 'C_PFC');
+            
+            const metabolicSAmyg = calcMean(metabolicAgents, 'S_Amyg');
+            const extractiveSAmyg = calcMean(extractiveAgents, 'S_Amyg');
+            
+            const metabolicVSurv = calcMean(metabolicAgents, 'V_Surv');
+            const extractiveVSurv = calcMean(extractiveAgents, 'V_Surv');
+            
+            const metabolicMoralDebt = calcMean(metabolicAgents, 'moralDebt');
+            const extractiveMoralDebt = calcMean(extractiveAgents, 'moralDebt');
+            
+            const metabolicAuto = timeArray.map(t => 
+                metabolicAgents.filter(a => a.history.mode[t] === 'AUTOMATIC').length / metabolicAgents.length * 100
+            );
+            const extractiveAuto = timeArray.map(t => 
+                extractiveAgents.filter(a => a.history.mode[t] === 'AUTOMATIC').length / extractiveAgents.length * 100
+            );
+            
+            const metabolicLambda = timeArray.map(t => calculateLambda(metabolicCPFC[t]));
+            const extractiveLambda = timeArray.map(t => calculateLambda(extractiveCPFC[t]));
+            
+            // FHRI Chart
+            plotChart('fhriChart', [
+                {x: timeArray, y: metabolicFHRI, name: 'Metabolic Institution', 
+                 line: {color: 'rgb(46, 204, 113)', width: 3}},
+                {x: timeArray, y: extractiveFHRI, name: 'Extractive Institution', 
+                 line: {color: 'rgb(231, 76, 60)', width: 3}}
+            ], 'Quarter', 'FHRI Score (0-100)',
+            [{y: 40, label: 'Severe', color: 'rgba(255, 68, 68, 0.2)'},
+             {y: 50, label: 'High Risk', color: 'rgba(255, 107, 53, 0.2)'},
+             {y: 60, label: 'At Risk', color: 'rgba(247, 183, 49, 0.2)'},
+             {y: 75, label: 'Sustainable', color: 'rgba(91, 192, 222, 0.2)'}]);
+            
+            // Biological Chart
+            plotChart('biologicalChart', [
+                {x: timeArray, y: metabolicLGC.map(v => v * 100), name: 'L_GC (Metabolic)', 
+                 line: {color: 'rgb(46, 204, 113)', width: 2, dash: 'solid'}},
+                {x: timeArray, y: extractiveLGC.map(v => v * 100), name: 'L_GC (Extractive)', 
+                 line: {color: 'rgb(231, 76, 60)', width: 2, dash: 'solid'}},
+                {x: timeArray, y: metabolicCPFC.map(v => v * 100), name: 'C_PFC (Metabolic)', 
+                 line: {color: 'rgb(46, 204, 113)', width: 2, dash: 'dot'}},
+                {x: timeArray, y: extractiveCPFC.map(v => v * 100), name: 'C_PFC (Extractive)', 
+                 line: {color: 'rgb(231, 76, 60)', width: 2, dash: 'dot'}}
+            ], 'Quarter', 'Percentage (%)');
+            
+            // Moral Debt Chart
+            plotChart('moralDebtChart', [
+                {x: timeArray, y: metabolicMoralDebt, name: 'Metabolic Institution', 
+                 line: {color: 'rgb(46, 204, 113)', width: 2}},
+                {x: timeArray, y: extractiveMoralDebt, name: 'Extractive Institution', 
+                 fill: 'tozeroy', line: {color: 'rgb(231, 76, 60)', width: 2}}
+            ], 'Quarter', 'Moral Debt',
+            [{y: 10, label: 'Bankruptcy', color: 'rgba(255, 0, 0, 0.3)'}]);
+            
+            // Cultural Chart
+            plotChart('culturalChart', [
+                {x: timeArray, y: metabolicVSurv.map(v => v * 100), name: 'Metabolic', 
+                 line: {color: 'rgb(46, 204, 113)', width: 2}},
+                {x: timeArray, y: extractiveVSurv.map(v => v * 100), name: 'Extractive', 
+                 line: {color: 'rgb(231, 76, 60)', width: 2}}
+            ], 'Quarter', 'Self-Expression Score (0=Survival, 100=Self-Expression)');
+            
+            // Decision Mode Chart
+            plotChart('decisionModeChart', [
+                {x: timeArray, y: metabolicAuto, name: 'Metabolic', 
+                 line: {color: 'rgb(46, 204, 113)', width: 2}},
+                {x: timeArray, y: extractiveAuto, name: 'Extractive', 
+                 fill: 'tozeroy', line: {color: 'rgb(231, 76, 60)', width: 2}}
+            ], 'Quarter', '% in Automatic Mode');
+            
+            // Lambda Chart
+            plotChart('lambdaChart', [
+                {x: timeArray, y: metabolicLambda, name: 'Metabolic', 
+                 line: {color: 'rgb(46, 204, 113)', width: 3}},
+                {x: timeArray, y: extractiveLambda, name: 'Extractive', 
+                 line: {color: 'rgb(231, 76, 60)', width: 3}}
+            ], 'Quarter', 'Lambda (0-1)',
+            [{y: 0.4, label: 'Critical', color: 'rgba(255, 0, 0, 0.2)'}]);
+            
+            // Constructor comparison
+            plotBarChart('constructorChart',
+                ['BioBond', 'Civic', 'Institutional'],
+                [0.4, 0.3, 0.5],
+                ['rgb(22, 160, 133)', 'rgb(41, 128, 185)', 'rgb(142, 68, 173)'],
+                'Metabolic');
+        }
+        
+        function plotChart(elementId, traces, xLabel, yLabel, shapes = []) {
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: { color: '#e6edf3', family: 'IBM Plex Sans, sans-serif' },
+                xaxis: { title: xLabel, gridcolor: '#30363d', zerolinecolor: '#30363d' },
+                yaxis: { title: yLabel, gridcolor: '#30363d', zerolinecolor: '#30363d' },
+                margin: { l: 60, r: 30, t: 30, b: 60 },
+                hovermode: 'x unified',
+                showlegend: true,
+                legend: { bgcolor: 'rgba(19, 25, 32, 0.8)', bordercolor: '#30363d', borderwidth: 1 }
+            };
+            
+            if (shapes.length > 0) {
+                layout.shapes = shapes.map(s => ({
+                    type: 'line',
+                    x0: 0,
+                    x1: 1,
+                    xref: 'paper',
+                    y0: s.y,
+                    y1: s.y,
+                    line: { color: s.color, width: 2, dash: 'dash' }
+                }));
+                layout.annotations = shapes.map(s => ({
+                    x: 0.98,
+                    xref: 'paper',
+                    y: s.y,
+                    text: s.label,
+                    showarrow: false,
+                    xanchor: 'right',
+                    bgcolor: s.color,
+                    font: { size: 10, color: 'white' }
+                }));
+            }
+            
+            const config = { responsive: true, displayModeBar: false };
+            Plotly.newPlot(elementId, traces, layout, config);
+        }
+        
+        function plotBarChart(elementId, labels, values, colors, groupName = '') {
+            const trace = {
+                x: labels,
+                y: values,
+                type: 'bar',
+                marker: { color: colors },
+                name: groupName
+            };
+            
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: { color: '#e6edf3', family: 'IBM Plex Sans, sans-serif' },
+                xaxis: { gridcolor: '#30363d' },
+                yaxis: { title: 'Support Level', gridcolor: '#30363d', range: [0, 1] },
+                margin: { l: 60, r: 30, t: 30, b: 60 },
+                showlegend: false
+            };
+            
+            const config = { responsive: true, displayModeBar: false };
+            Plotly.newPlot(elementId, [trace], layout, config);
+        }
+        
+        function downloadData() {
+            if (simulationData.agents.length === 0) {
+                alert('Please run a simulation first!');
+                return;
+            }
+            
+            // Generate CSV data
+            let csv = 'Agent,Timestep,Institution,FHRI,L_GC,C_PFC,S_Amyg,V_Surv,MoralDebt,Mode\n';
+            
+            simulationData.agents.forEach((agent, idx) => {
+                for (let t = 0; t < agent.history.FHRI.length; t++) {
+                    csv += `${idx},${t},${agent.institutionType},${agent.history.FHRI[t].toFixed(2)},`;
+                    csv += `${agent.history.L_GC[t].toFixed(3)},${agent.history.C_PFC[t].toFixed(3)},`;
+                    csv += `${agent.history.S_Amyg[t].toFixed(3)},${agent.history.V_Surv[t].toFixed(3)},`;
+                    csv += `${agent.history.moralDebt[t].toFixed(3)},${agent.history.mode[t]}\n`;
+                }
+            });
+            
+            // Download
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'bccm_simulation_data.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
