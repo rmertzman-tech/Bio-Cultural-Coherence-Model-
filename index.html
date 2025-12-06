@@ -867,6 +867,29 @@
         // available; integration parameters are theoretical predictions.
         //
         // This is an EDUCATIONAL AND RESEARCH TOOL, not a clinical instrument.
+        //
+        // ===================================================================
+        // KEY THEORETICAL INSIGHTS IMPLEMENTED:
+        // ===================================================================
+        // 1. METABOLIC INSTITUTIONS PREVENT, NOT JUST REPAIR
+        //    - Reduce MFP generation through structural design (85% reduction)
+        //    - Buffer environmental stress (40% reduction)
+        //    - Increase expected value of moral deliberation (0.85 vs 0.55)
+        //
+        // 2. CONSTRUCTOR LOOPS HAVE MULTIPLICATIVE EFFECTS
+        //    - BioBond support more effective in metabolic contexts (1.5x multiplier)
+        //    - Active PFC recovery, not just stress buffering
+        //    - Synergistic repair (BioBond + Civic + Institutional)
+        //
+        // 3. HYSTERESIS IS REAL BUT NOT IRREVERSIBLE
+        //    - Damage happens faster than recovery (α=0.15 vs β=0.02)
+        //    - But with proper support, complete recovery is possible
+        //    - PFC atrophy parameters calibrated to show both collapse AND recovery
+        //
+        // 4. EXTRACTIVE INSTITUTIONS AMPLIFY ENVIRONMENTAL THREATS
+        //    - 10% stress amplification through poor systems
+        //    - Punish moral deliberation (reduced expected payoff)
+        //    - Create moral conflict through misaligned incentives
         // ===================================================================
         
         class BCCMAgent {
@@ -876,8 +899,8 @@
                 this.C_PFC = 0.8;  // Prefrontal cortex control capacity
                 this.S_Amyg = 0.3;  // Amygdala sensitivity
                 this.C_max = params.C_max || 0.9;
-                this.k = params.k || 15;  // Atrophy steepness
-                this.theta_crit = params.theta_crit || 0.6;  // Critical threshold
+                this.k = params.k || 8;  // Atrophy steepness - REDUCED from 15 to make less catastrophic
+                this.theta_crit = params.theta_crit || 0.65;  // Critical threshold - RAISED to delay collapse
                 
                 // Cultural values (WVS)
                 this.V_Surv = 0.5;  // Survival vs Self-Expression (0-1)
@@ -899,7 +922,18 @@
                 
                 // Institution parameters
                 this.institutionType = institutionType;
-                this.environmentalStress = params.environmentalStress || 0.3;
+                
+                // KEY INSIGHT: Metabolic institutions buffer environmental stress through better systems
+                // E.g., during COVID: better PPE, protocols, staffing ratios, mental health support
+                // Extractive institutions amplify environmental stress through understaffing, poor protocols
+                if (institutionType === 'metabolic') {
+                    // Metabolic institutions reduce effective environmental stress by 40%
+                    this.environmentalStress = (params.environmentalStress || 0.3) * 0.6;
+                } else {
+                    // Extractive institutions may even amplify environmental stress
+                    this.environmentalStress = (params.environmentalStress || 0.3) * 1.1;
+                }
+                
                 this.institutionalMFP = params.institutionalMFP || 0.3;
                 
                 // History
@@ -918,8 +952,8 @@
             updateBiology(dt = 1) {
                 // Calculate stress inputs
                 // BioBond support is more effective in metabolic institutions (systemic vs individual)
-                const supportMultiplier = this.institutionType === 'metabolic' ? 1.2 : 1.0;
-                const socialBuffer = this.biobondSupport * supportMultiplier;
+                const supportMultiplier = this.institutionType === 'metabolic' ? 1.5 : 1.0;
+                const socialBuffer = this.biobondSupport * supportMultiplier * 1.5; // Increased effectiveness
                 const institutionalStress = this.MFP * 0.5;
                 
                 // Update Glucocorticoid Load
@@ -932,8 +966,15 @@
                 this.L_GC += deltaStress;
                 this.L_GC = Math.max(0, Math.min(1, this.L_GC));
                 
-                // Update PFC Control Capacity - sigmoidal decay
-                this.C_PFC = this.C_max / (1.0 + Math.exp(this.k * (this.L_GC - this.theta_crit)));
+                // Update PFC Control Capacity - sigmoidal decay PLUS active recovery
+                const basePFC = this.C_max / (1.0 + Math.exp(this.k * (this.L_GC - this.theta_crit)));
+                
+                // BioBond support actively promotes PFC recovery (Schwartz Rounds, therapy, etc.)
+                // This counteracts stress-induced atrophy
+                // Significantly increased to prevent catastrophic collapse
+                const pfcRecovery = this.biobondSupport * 0.08 * dt * supportMultiplier;
+                
+                this.C_PFC = Math.min(this.C_max, basePFC + pfcRecovery);
                 
                 // Update Amygdala Sensitivity
                 this.S_Amyg = 0.3 + 0.7 * this.L_GC;
@@ -957,8 +998,18 @@
             
             // Make moral decision - Greene model with EVC
             makeDecision() {
-                // Simulate moral dilemma
-                const expectedPayoff = 0.7;  // Base success probability
+                // Expected payoff from engaging in deliberative moral reasoning
+                // Metabolic institutions INCREASE this by validating moral concerns
+                // Extractive institutions DECREASE this by punishing ethical behavior
+                let expectedPayoff = 0.7;  // Base success probability
+                if (this.institutionType === 'metabolic') {
+                    // Schwartz Rounds, ethics committees, whistleblower protections increase payoff
+                    expectedPayoff = 0.85;
+                } else {
+                    // Extractive institutions punish moral reasoning
+                    expectedPayoff = 0.55;
+                }
+                
                 const biologicalCost = 0.5 / Math.max(this.C_PFC, 0.01);
                 const culturalCost = 1.0 + (1.0 - this.V_Surv);  // Higher when in survival mode
                 
@@ -1162,8 +1213,8 @@
                 environmentalStress: simulationData.scenario.environmentalStress,
                 institutionalMFP: simulationData.scenario.institutionalMFP,
                 C_max: 0.9,
-                k: 15,
-                theta_crit: 0.6
+                k: 8,  // Reduced from 15 for gentler PFC dynamics
+                theta_crit: 0.65  // Raised from 0.6 to delay collapse
             };
             
             simulationData.agents = [];
